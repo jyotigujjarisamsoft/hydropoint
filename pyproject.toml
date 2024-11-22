@@ -1,9 +1,9 @@
 [project]
-name = "hydropoint"
+name = "hydropointme"
 authors = [
-    { name = "jyoti@gmail.com", email = "jyoti.gujjari@samsoft.co"}
+    { name = "jyoti", email = "jyoti.gujjari@samsoft.co"}
 ]
-description = "jyoti"
+description = "hydropointme"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

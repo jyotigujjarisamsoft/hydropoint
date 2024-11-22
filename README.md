@@ -1,7 +1,2 @@
-## hydropoint
-
-jyoti
-
-#### License
-
-mit
+# hydropointme
+hydropoint

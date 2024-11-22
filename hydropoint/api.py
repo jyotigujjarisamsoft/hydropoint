@@ -8,6 +8,73 @@ from datetime import datetime
 from datetime import date
 import json 
 
+
+@frappe.whitelist()
+def create_landed_cost_voucher(purchase_receipt, purchase_invoice):
+    if not purchase_receipt:
+        frappe.throw("Purchase Receipt is required to create Landed Cost Voucher")
+
+    # Fetch details from Purchase Receipt
+    purchase_receipt_doc = frappe.get_doc("Purchase Receipt", purchase_receipt)
+    supplier = purchase_receipt_doc.supplier
+    print("supplier",supplier)
+    grand_total = purchase_receipt_doc.grand_total
+    print("grand_total",grand_total)
+    posting_date = purchase_receipt_doc.posting_date
+    print("posting_date",posting_date)
+
+    # Create a new Landed Cost Voucher
+    lcv = frappe.new_doc("Landed Cost Voucher")
+    lcv.company = frappe.defaults.get_user_default("Company")
+    
+    # Set 'Distribute Charges Based On' to 'Amount'
+    lcv.distribute_charges_based_on = "Amount"
+
+    # Add Purchase Receipt details
+    lcv.append("purchase_receipts", {
+        "receipt_document_type": "Purchase Receipt",
+        "receipt_document": purchase_receipt,
+        "supplier":supplier,
+        "grand_total":grand_total,
+        "posting_date":posting_date
+    })
+
+    # Fetch Purchase Invoice details to get the expense account
+    if purchase_invoice:
+        purchase_invoice_items = frappe.get_all('Purchase Invoice Item', filters={'parent': purchase_invoice}, fields=['expense_account', 'amount', 'description'])
+        if purchase_invoice_items:
+            # Assuming the expense account is the same for all items, pick the first one
+            expense_account = purchase_invoice_items[0].expense_account
+            amount = purchase_invoice_items[0].amount
+            description = purchase_invoice_items[0].description
+        else:
+            expense_account = "Default Expense Account"  # Set a default if no items are found
+            amount = 0
+            description = "Default Description"
+    else:
+        expense_account = "Default Expense Account"
+        amount = 0
+        description = "Default Description"
+
+    # Add default taxes and charges
+    lcv.append("taxes", {
+        "description": description,
+        "expense_account": expense_account,  # Autofilled expense account from Purchase Invoice
+        "amount": amount  # Example fixed tax amount
+    })
+
+    # Trigger the built-in method to fetch items
+    lcv.flags.ignore_permissions = True  # To ensure custom script permissions
+    lcv.get_items_from_purchase_receipts()
+
+    # Save the Landed Cost Voucher
+    lcv.insert()
+    lcv.save()
+    lcv.submit()
+
+    return lcv.name
+
+
 @frappe.whitelist()
 def get_sales_order_details(item_code):
     sales_order_items = frappe.db.sql("""

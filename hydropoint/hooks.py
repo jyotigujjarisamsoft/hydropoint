@@ -1,7 +1,7 @@
-app_name = "hydropoint"
-app_title = "hydropoint"
-app_publisher = "jyoti@gmail.com"
-app_description = "jyoti"
+app_name = "hydropointme"
+app_title = "Hydropointme"
+app_publisher = "jyoti"
+app_description = "hydropointme"
 app_email = "jyoti.gujjari@samsoft.co"
 app_license = "mit"
 # required_apps = []
@@ -10,15 +10,15 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/hydropoint/css/hydropoint.css"
-# app_include_js = "/assets/hydropoint/js/hydropoint.js"
+# app_include_css = "/assets/hydropointme/css/hydropointme.css"
+# app_include_js = "/assets/hydropointme/js/hydropointme.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/hydropoint/css/hydropoint.css"
-# web_include_js = "/assets/hydropoint/js/hydropoint.js"
+# web_include_css = "/assets/hydropointme/css/hydropointme.css"
+# web_include_js = "/assets/hydropointme/js/hydropointme.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "hydropoint/public/scss/website"
+# website_theme_scss = "hydropointme/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -36,7 +36,7 @@ app_license = "mit"
 # Svg Icons
 # ------------------
 # include app icons in desk
-# app_include_icons = "hydropoint/public/icons.svg"
+# app_include_icons = "hydropointme/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -60,43 +60,43 @@ app_license = "mit"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "hydropoint.utils.jinja_methods",
-# 	"filters": "hydropoint.utils.jinja_filters"
+# 	"methods": "hydropointme.utils.jinja_methods",
+# 	"filters": "hydropointme.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "hydropoint.install.before_install"
-# after_install = "hydropoint.install.after_install"
+# before_install = "hydropointme.install.before_install"
+# after_install = "hydropointme.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "hydropoint.uninstall.before_uninstall"
-# after_uninstall = "hydropoint.uninstall.after_uninstall"
+# before_uninstall = "hydropointme.uninstall.before_uninstall"
+# after_uninstall = "hydropointme.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "hydropoint.utils.before_app_install"
-# after_app_install = "hydropoint.utils.after_app_install"
+# before_app_install = "hydropointme.utils.before_app_install"
+# after_app_install = "hydropointme.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "hydropoint.utils.before_app_uninstall"
-# after_app_uninstall = "hydropoint.utils.after_app_uninstall"
+# before_app_uninstall = "hydropointme.utils.before_app_uninstall"
+# after_app_uninstall = "hydropointme.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "hydropoint.notifications.get_notification_config"
+# notification_config = "hydropointme.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -135,39 +135,39 @@ app_license = "mit"
 
 # scheduler_events = {
 # 	"all": [
-# 		"hydropoint.tasks.all"
+# 		"hydropointme.tasks.all"
 # 	],
 # 	"daily": [
-# 		"hydropoint.tasks.daily"
+# 		"hydropointme.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"hydropoint.tasks.hourly"
+# 		"hydropointme.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"hydropoint.tasks.weekly"
+# 		"hydropointme.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"hydropoint.tasks.monthly"
+# 		"hydropointme.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "hydropoint.install.before_tests"
+# before_tests = "hydropointme.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "hydropoint.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "hydropointme.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "hydropoint.task.get_dashboard_data"
+# 	"Task": "hydropointme.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -181,13 +181,13 @@ app_license = "mit"
 
 # Request Events
 # ----------------
-# before_request = ["hydropoint.utils.before_request"]
-# after_request = ["hydropoint.utils.after_request"]
+# before_request = ["hydropointme.utils.before_request"]
+# after_request = ["hydropointme.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["hydropoint.utils.before_job"]
-# after_job = ["hydropoint.utils.after_job"]
+# before_job = ["hydropointme.utils.before_job"]
+# after_job = ["hydropointme.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -217,7 +217,7 @@ app_license = "mit"
 # --------------------------------
 
 # auth_hooks = [
-# 	"hydropoint.auth.validate"
+# 	"hydropointme.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
